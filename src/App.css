@@ -1,0 +1,211 @@
+.page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 28px 18px;
+  background-image:
+  linear-gradient(rgb(35 12 25 / 40%), rgb(35 12 25 / 48%)),
+  url('/arka-plan.jpg'),
+  url('/ikinci-foto.jpg');
+background-position: center, left center, right center;
+background-size: cover, 50% auto, 50% auto;
+background-repeat: no-repeat;
+ background-color: #70464f;
+  color: #fff8f3;
+}
+
+.shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(145deg, rgb(28 13 24 / 50%), rgb(52 20 35 / 62%));
+}
+
+.card {
+  width: min(100%, 460px);
+  padding: 38px 25px 26px;
+  text-align: center;
+  border: 1px solid rgb(255 255 255 / 30%);
+  border-radius: 28px;
+  background: rgb(75 35 50 / 44%);
+  box-shadow: 0 24px 80px rgb(20 5 15 / 28%);
+  backdrop-filter: blur(8px);
+}
+
+.eyebrow,
+.day {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  font-weight: 700;
+}
+
+.eyebrow {
+  color: #f5cbd3;
+}
+
+.heart {
+  margin: 16px 0 3px;
+  color: #ffd5dd;
+  font-family: Georgia, serif;
+  font-size: 3.3rem;
+  line-height: 1;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+h1 {
+  margin: 8px 0 14px;
+  color: #fff8f3;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.25rem, 10vw, 3.15rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.intro {
+  margin: 0 auto 25px;
+  color: #f4dfe0;
+  line-height: 1.65;
+  font-size: 1rem;
+}
+
+.open-button {
+  width: 100%;
+  min-height: 56px;
+  padding: 14px 20px;
+  border: 0;
+  border-radius: 999px;
+  background: #f7d4d8;
+  color: #542c3b;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgb(25 5 15 / 20%);
+  transition: transform 160ms ease, background 160ms ease;
+  animation: button-glow 2.4s ease-in-out infinite;
+}
+
+.open-button:hover {
+  transform: translateY(-2px);
+  background: #ffe5e7;
+}
+
+.open-button span {
+  margin-left: 5px;
+  color: #b3445c;
+}
+
+.message-box {
+  padding: 19px 16px;
+  border-radius: 20px;
+  background: rgb(255 246 241 / 94%);
+  color: #593443;
+  animation: appear 400ms ease both;
+}
+
+.day {
+  color: #a5576b;
+  font-size: 0.68rem;
+}
+
+.message {
+  margin: 12px 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.25rem, 5.5vw, 1.65rem);
+  line-height: 1.45;
+}
+
+.tiny-heart {
+  color: #bd5b70;
+}
+
+.music-button {
+  display: block;
+  min-height: 44px;
+  margin: 14px auto 0;
+  padding: 8px 16px;
+  border: 1px solid rgb(255 255 255 / 45%);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 10%);
+  color: #fff8f3;
+  font: inherit;
+  cursor: pointer;
+}
+
+.footer {
+  margin: 20px 0 0;
+  color: #f1d6da;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.92rem;
+  font-style: italic;
+}
+
+.hearts {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hearts span {
+  position: absolute;
+  left: calc(var(--x) * 1%);
+  bottom: -50px;
+  color: rgba(255, 215, 222, 0.72);
+  font-size: calc(var(--size) * 1px);
+  animation: float var(--duration) linear infinite;
+  animation-delay: var(--delay);
+}
+
+
+@keyframes float {
+  from {
+    transform: translateY(0) rotate(0);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.7;
+  }
+
+  to {
+    transform: translateY(-110vh) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.12); }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 380px) {
+  .card {
+    padding: 30px 18px 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+@keyframes button-glow {
+  0%, 100% {
+    box-shadow: 0 8px 25px rgb(25 5 15 / 20%);
+  }
+  50% {
+    box-shadow: 0 8px 30px rgb(255 210 220 / 50%);
+  }
+}
