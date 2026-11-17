@@ -7,22 +7,31 @@
   place-items: center;
   overflow: hidden;
   padding: 28px 18px;
-  background-image:
-  linear-gradient(rgb(35 12 25 / 40%), rgb(35 12 25 / 48%)),
-  url('/arka-plan.jpg'),
-  url('/ikinci-foto.jpg');
-background-position: center, left center, right center;
-background-size: cover, 50% auto, 50% auto;
-background-repeat: no-repeat;
- background-color: #70464f;
+  background-color: #70464f;
   color: #fff8f3;
 }
 
+.page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: url('/arka-plan.jpg'), url('/ikinci-foto.jpg');
+  background-position: left center, right center;
+  background-size: 50% 100%, 50% 100%;
+  background-repeat: no-repeat;
+}
+
 .shade {
-  position: absolute;
+  position: fixed;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(145deg, rgb(28 13 24 / 50%), rgb(52 20 35 / 62%));
+  background: linear-gradient(
+    145deg,
+    rgb(28 13 24 / 22%),
+    rgb(52 20 35 / 30%)
+  );
+  pointer-events: none;
 }
 
 .card {
