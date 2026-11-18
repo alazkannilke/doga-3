@@ -231,9 +231,10 @@ h1 {
 }
 
 .heart-photo {
-  width: 64px;
-  height: 80px;
+  width: 84px;
+  height: 104px;
   object-fit: cover;
+  object-position: center 35%;
   border-radius: 14px;
   border: 1px solid rgb(255 255 255 / 55%);
   box-shadow: 0 6px 18px rgb(20 5 15 / 28%);

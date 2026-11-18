@@ -117,7 +117,8 @@ function getDayNumber(startDateKey, todayKey) {
   const start = Date.UTC(startYear, startMonth - 1, startDay)
   const today = Date.UTC(todayYear, todayMonth - 1, todayDay)
 
-  return Math.floor((today - start) / (1000 * 60 * 60 * 24)) + 1
+const totalDaysPassed = Math.floor((today - start) / (1000 * 60 * 60 * 24))
+return (totalDaysPassed % messages.length) + 1
 }
 
 function App() {
@@ -138,9 +139,9 @@ function App() {
     () => localStorage.getItem('opened-message-date') === todayKey,
   )
 
-  const dayNumber = getDayNumber(startDateKey, todayKey)
+const dayNumber = getDayNumber(startDateKey, todayKey)
   const message = messages[dayNumber - 1]
-  const canOpenToday = dayNumber >= 1 && dayNumber <= messages.length
+const canOpenToday = true
 
   function openMessage() {
     if (localStorage.getItem('opened-message-date') === todayKey) {
