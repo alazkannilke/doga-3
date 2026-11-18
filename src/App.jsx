@@ -177,7 +177,11 @@ function App() {
 
       <section className="card">
         <p className="eyebrow">SANA ÖZEL · 100 GÜN</p>
-        <div className="heart" aria-hidden="true">♡</div>
+<div className="heart-row">
+  <img className="heart-photo" src="/arka-plan.jpg" alt="" />
+  <div className="heart" aria-hidden="true">♡</div>
+  <img className="heart-photo" src="/ikinci-foto.jpg" alt="" />
+</div>
 
         <h1>Her gün<br />kalbimden sana</h1>
 

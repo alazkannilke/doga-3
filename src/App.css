@@ -16,9 +16,9 @@
   position: fixed;
   inset: 0;
   z-index: -2;
-  background-image: url('/arka-plan.jpg'), url('/ikinci-foto.jpg');
-  background-position: left center, right center;
-  background-size: 50% 100%, 50% 100%;
+  background-image: url('/kalpli-foto.jpg');
+  background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -28,8 +28,8 @@
   z-index: -1;
   background: linear-gradient(
     145deg,
-    rgb(28 13 24 / 22%),
-    rgb(52 20 35 / 30%)
+    rgb(28 13 24 / 35%),
+    rgb(52 20 35 / 45%)
   );
   pointer-events: none;
 }
@@ -217,4 +217,24 @@ h1 {
   50% {
     box-shadow: 0 8px 30px rgb(255 210 220 / 50%);
   }
+}
+.heart-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 16px auto 3px;
+}
+
+.heart-row .heart {
+  margin: 0;
+}
+
+.heart-photo {
+  width: 64px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgb(255 255 255 / 55%);
+  box-shadow: 0 6px 18px rgb(20 5 15 / 28%);
 }
